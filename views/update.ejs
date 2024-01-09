@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update data</title>
+</head>
+<body>
+    <form action="/editInfo" method="post">
+        <table>
+            <input type="hidden" name="oldAge" value="<%= age %>">
+            <tr>
+                <td>Enter name : </td>
+                <td><input type="text" name="name" value="<%= name %>"></td>
+            </tr>
+            <tr>
+                <td>Enter age : </td>
+                <td><input type="text" name="age" value="<%= age %>"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

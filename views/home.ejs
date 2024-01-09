@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        td{
+            padding: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Add students : </h1>
+    <form action="/addStudent" method="post">
+        <table>
+            <tr>
+                <td>Enter name : </td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Enter age : </td>
+                <td><input type="text" name="age"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <h1>Students list :</h1>
+    <table border="1">
+        <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>
+        <% var i=0; for(var v of students){%>
+        <tr>
+            <td><%= i %></td>
+            <td><%= v.name %></td>
+            <td><%= v.age %></td>
+
+            <!-- Using queryString -->
+            <td><a href="/deleteStudent/?age=<%= v.age %>">Delete</a></td>
+
+            <!-- Using Params -->
+            <!-- <td><a href="/deleteStudent/<%= v.age %>">Delete</a></td> -->
+
+            <td><a href="/updateStudent/?age=<%= v.age %>">Update</a></td>
+        </tr>
+        <% i++; } %>
+    </table>
+</body>
+</html>
