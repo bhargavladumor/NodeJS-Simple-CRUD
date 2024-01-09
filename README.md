@@ -1,0 +1,1 @@
+This Node.js CRUD application offers a lightweight solution for performing basic Create, Read, Update, and Delete operations without the need for a traditional database. The application utilizes an in-memory data structure to store information temporarily, making it easy to set up and run without the overhead of a database system.
